@@ -1,57 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 240 20% 96.1%; /* #F3F3F9 */
+    --foreground: 210 10.3% 14.5%; /* #212529 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 210 10.3% 14.5%; /* #212529 */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%; /* #FFFFFF */
+    --popover-foreground: 210 10.3% 14.5%; /* #212529 */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 201.5 70.1% 50.6%; /* #299CDB - PRD accentBlue */
+    --primary-foreground: 210 40% 98%; /* Existing light gray, good contrast */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 96.1%; /* Existing light gray, for secondary backgrounds */
+    --secondary-foreground: 225 6.3% 63.1%; /* #878A99 - PRD secondaryText */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 13.3% 93.3%; /* #E9EBEC - PRD border, for muted backgrounds */
+    --muted-foreground: 225 6.3% 63.1%; /* #878A99 - PRD secondaryText for muted text */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 172.7 89.3% 40.2%; /* #0AB39C - PRD accentGreen */
+    --accent-foreground: 210 40% 98%; /* Existing light gray */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 10.7 86.1% 61.2%; /* #F06548 - PRD accentRed */
+    --destructive-foreground: 210 40% 98%; /* Existing light gray */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13.3% 93.3%; /* #E9EBEC - PRD border */
+    --input: 220 13.3% 93.3%; /* #E9EBEC - PRD border */
+    --ring: 201.5 70.1% 50.6%; /* #299CDB - PRD accentBlue for focus rings */
 
-    --radius: 0.5rem;
+    --radius: 0.375rem; /* Tailwind's default for 'md', aligns with PRD 'rounded-md' */
 
-    --sidebar-background: 0 0% 98%;
+    /* Velzon specific colors from PRD */
+    --velzon-background: 240 20% 96.1%; /* #F3F3F9 */
+    --velzon-surface: 0 0% 100%; /* #FFFFFF */
+    --velzon-sidebar-bg: 227.1 34% 39.4%; /* #405189 */
+    --velzon-primary-text: 210 10.3% 14.5%; /* #212529 */
+    --velzon-secondary-text: 225 6.3% 63.1%; /* #878A99 */
+    --velzon-accent-green: 172.7 89.3% 40.2%; /* #0AB39C */
+    --velzon-accent-red: 10.7 86.1% 61.2%; /* #F06548 */
+    --velzon-accent-blue: 201.5 70.1% 50.6%; /* #299CDB */
+    --velzon-border-color: 220 13.3% 93.3%; /* #E9EBEC */
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
+    /* Sidebar variables from existing, updated with PRD sidebar color */
+    --sidebar-background: 227.1 34% 39.4%; /* #405189 from PRD */
+    --sidebar-foreground: 210 40% 98%; /* Light text for dark sidebar */
+    
+    /* Preserving other existing sidebar vars, PRD doesn't specify them */
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
+    /* PRD does not specify dark theme, preserving existing dark theme variables */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -97,5 +107,8 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Nunito', sans-serif; /* Ensured by tailwind.config.ts, but explicit for clarity if needed */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
