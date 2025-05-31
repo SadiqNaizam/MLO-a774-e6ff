@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
 	darkMode: ["class"],
@@ -61,13 +62,28 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+        // Direct PRD colors for convenience, if needed alongside CSS vars
+        velzon: {
+          background: '#F3F3F9',
+          surface: '#FFFFFF',
+          sidebar: '#405189',
+          primaryText: '#212529',
+          secondaryText: '#878A99',
+          accentGreen: '#0AB39C',
+          accentRed: '#F06548',
+          accentBlue: '#299CDB',
+          border: '#E9EBEC'
+        }
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				lg: 'var(--radius)', // 0.375rem from CSS var --radius
+				md: 'calc(var(--radius) - 2px)', // e.g., 0.375rem - 2px
+				sm: 'calc(var(--radius) - 4px)'  // e.g., 0.375rem - 4px
 			},
+			fontFamily: {
+        sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+      },
 			keyframes: {
 				'accordion-down': {
 					from: {
